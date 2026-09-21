@@ -10,6 +10,11 @@ const errorOutput = document.querySelector('.c-form__error');
 
 let tipPercent = 15;
 
+form.addEventListener('submit', (event) => {
+	event.preventDefault();
+	calculate();
+});
+
 function formatAmount(amount) {
 	return amount.toFixed(2);
 }
