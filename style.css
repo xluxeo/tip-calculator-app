@@ -37,8 +37,8 @@ body {
 
 .c-page-title {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   padding: 0;
   margin: -1px;
   overflow: hidden;
@@ -58,8 +58,8 @@ body {
 
 .u-visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   padding: 0;
   margin: -1px;
   overflow: hidden;
@@ -165,17 +165,6 @@ input[type="number"] {
 }
 
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
-
 .c-custom-tip {
   display: grid;
   align-content: center;
@@ -240,18 +229,18 @@ input[type="number"] {
       color: var(--green-900);
 }
 
-  .c-form__group .c-button:hover,
-  .c-form__group .c-button:focus-visible {
+.c-button--tip:hover,
+.c-button--tip:focus-visible {
     background-color: var(--green-900);
     color: var(--white);
-  }
+}
 
-  .c-form__group .c-button[data-selected],
-  .c-form__group .c-button[data-selected]:hover,
-  .c-form__group .c-button[data-selected]:focus-visible {
+.c-button--tip[data-selected],
+.c-button--tip[data-selected]:hover,
+.c-button--tip[data-selected]:focus-visible {
     background-color: var(--green-400);
     color: var(--green-900);
-  }
+}
 
 [data-button-variant="primary"] {
     background-color: var(--green-400);
@@ -272,13 +261,13 @@ input[type="number"] {
     color: var(--white);
 }
 
-  .c-card .c-button {
+  .c-card__button {
     padding: 0.625rem 1rem;
     font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
   }
 
-.c-card .c-button:hover,
-.c-card .c-button:focus-visible {
+  .c-card__button:hover,
+  .c-card__button:focus-visible {
   background-color: var(--grey-50);
 }
 
@@ -362,9 +351,19 @@ input[type="number"] {
       grid-template-rows: auto auto 1fr;
     }
 
-    .c-card .c-button {
+    .c-card__button {
       align-self: end;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto;
+    transition: none;
+    animation: none;
+  }
 }
 
 @media (max-width: 63.99em) {
